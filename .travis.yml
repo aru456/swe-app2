@@ -10,4 +10,4 @@ script:
   - coverage report
   - black --check .
 after_success:
-  - coveralls  # Report coverage
+  - coveralls --service=github

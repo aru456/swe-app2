@@ -6,7 +6,8 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - coverage run --source=polls manage.py test  
+  - coverage run --source=polls manage.py test
+  - coverage report
   - black --check .
 after_success:
   - coveralls  # Report coverage

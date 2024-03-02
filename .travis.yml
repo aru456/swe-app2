@@ -3,15 +3,23 @@ dist: focal  # Use Ubuntu 20.04
 os: linux
 python:
   - "3.11"  # Specify the Python version
+
 install:
   - pip install -r requirements.txt
+
+before_script:
+  # Adjust Flake8 to match Black's style
+  - echo "[flake8]" > .flake8
+  - echo "max-line-length = 88" >> .flake8
+  - echo "ignore = E203, W503" >> .flake8
+
 script:
   - black .
-  - black --check .
-  - flake8 .
-  - python manage.py migrate
-  - coverage run --source=polls manage.py test
-  - coverage report
-  
+  - black --check .  
+  - flake8 .  
+  - python manage.py migrate  
+  - coverage run --source=polls manage.py test  
+  - coverage report  
+
 after_success:
   - coveralls --service=github

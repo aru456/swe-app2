@@ -23,3 +23,5 @@ wcwidth==0.1.9
 coverage
 coveralls
 black
+flake8
+PyYAML

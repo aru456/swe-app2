@@ -31,6 +31,6 @@ deploy:
   region: "us-east-1"
   app: "application-polls2"
   env: "staging2"
-  bucket_name: "elasticbeanstalk-us-east-1-831379192233"
+  bucket_name: "elasticbeanstalk-us-east-1-905418363028"
   on:
     branch: main
